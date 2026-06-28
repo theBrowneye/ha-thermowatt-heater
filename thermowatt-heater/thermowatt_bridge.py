@@ -60,7 +60,8 @@ class MyThermowattBridge:
         
         # Add required headers (exactly like their C# code)
         self.session.headers.update({
-            "app": "MyThermowatt",
+#            "app": "MyThermowatt",
+            "app": "Thermann Control",
             "platform": "iOS",
             "version": "3.14",
             "lang": "en"
