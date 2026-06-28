@@ -78,6 +78,11 @@ class MyThermowattBridge:
         
         payload = {"username": EMAIL, "password": PASSWORD, "device_id": self.config["device_uuid"]}
         r = self.session.post(f"{self.BASE_URL}/login", json=payload, verify=False)
+
+        # Temporary debug - remove once working
+        print(f"[DEBUG] Login status: {r.status_code}")
+        print(f"[DEBUG] Login response: {r.text}")
+    
         r.raise_for_status()
         res = r.json()['result']
         self._update_auth(res['accessToken'], res['refreshToken'])
